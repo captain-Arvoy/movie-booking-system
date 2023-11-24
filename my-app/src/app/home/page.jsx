@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client"
 import Link from 'next/link'
 import ImageSlider from '@/components/ImageSlider';
@@ -17,18 +16,8 @@ export default function Hero(){
                 <Link className="mr-4" href="/">Home</Link>
                 <Link className="mr-4" href="/movies">Movies</Link>
                 <button onClick={toggleNavbar}>profile</button>
-=======
-import Link from 'next/link'
-import ImageSlider from '../components/ImageSlider';
-export default function Hero(){
-    return(
-        <>
-            <div className="fixed bottom-0 w-full bg-gray-200 p-4 flex justify-between">        
-                <Link className="mr-4" href="/">Home</Link>
-                <Link className="mr-4" href="/movies">Movies</Link>
-                <Link href="/profile">Profile</Link>
->>>>>>> 22442cf (making image slider;)
             </div>
+            {isOpen && <Profile />}
             <div className='fixed top-0 w-full bg-gray-800 p-4 flex items-center justify-center'>
                 <div className='flex items-center'>
                     <div className='h-2 w-16 mr-4 '>
@@ -37,10 +26,6 @@ export default function Hero(){
                 </div>
             </div>
             <ImageSlider/>
-<<<<<<< HEAD
-
-=======
->>>>>>> 22442cf (making image slider;)
         </>
     );
 }
