@@ -12,4 +12,3 @@ export default function Hero(){
         </>
     );
 }
-{/* checkout the video @42:45 */}
