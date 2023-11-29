@@ -1,27 +1,19 @@
-const { images } = require("../../../next.config");
-
-function ImageSlider(){
+import { useEffect, useState } from "react";
+import Carousel from "react-material-ui-carousel"
+import Item from '@/app/components/Item'
+export default function ImageSlider(){
+    const [images, setImages] = useState([])
+    useEffect(()=>{
+        setImages(['/Image1.jpg','/Image2.jpg','/Image3.jpg']);
+    },[]);
     return(
         <>
-            const [currentSlide, setCurrentSlide] = useState(0);
-            {/* const images = ['Image','Image','Image'] */}
-            useEffect(() => {
-                const interval = setInterval(() => {
-                    setCurrentSlide((prevSlide)=>(prevSlide+1)%images.length);
-                }, 2000);
-                return ()=> clearInterval(interval);
-            }, [currentSlide,images.length]
-            return (
-                <div className="slider-container overflow-hidden w-full max-w-md mx-auto">
-                    <div>
-                        {images.remotePatterns((image,index)=>{
-                            <img key={index} src={image} alt={`slider`} className="w-full h-auto" />
-                        })}
-                    </div>
-                </div>
-            );
-            )
+            <Carousel>
+                {images.map((item,index)=>{
+                    <Item key={index} item={item} />
+                })}
+                
+            </Carousel>
         </>
     );
 }
-export default ImageSlider;
