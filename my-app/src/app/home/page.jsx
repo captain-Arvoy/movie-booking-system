@@ -8,7 +8,10 @@ export default function Hero(){
     
     return(
         <>
-            <h1>Hello world</h1>
+            <div 
+                className='p-4 bg-primary flex flex-col min-h-screen items-center justify-center py-2 text-primary text-2xl
+                '><h1>Hello world
+            </h1></div>
         </>
     );
 }
