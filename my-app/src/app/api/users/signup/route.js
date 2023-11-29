@@ -24,6 +24,7 @@ export async function POST(NextRequest){
         })
         try{
             await newUser.save()
+            console.log(``)
             return NextResponse.json({
                 message: "User created successfully",
                 success: true,

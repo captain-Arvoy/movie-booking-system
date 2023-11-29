@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-export default async function connect(){
+export async function connect(){
     try{
         mongoose.connect(process.env.MONGO_URI);
         const connection = mongoose.connection;
@@ -8,7 +8,7 @@ export default async function connect(){
         })
 
         connection.on('error',(err)=>{
-            console.log("MongoDB connection error");
+            console.log("MongoDB connection error: "+err);
             process.exit();
         })
     } catch(error){
