@@ -8,8 +8,7 @@ export default function Hero(){
     
     return(
         <>
-           <LoginPage />
-           <SignUpPage />
+            <h1>Hello world</h1>
         </>
     );
 }
