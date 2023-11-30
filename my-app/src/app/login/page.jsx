@@ -12,8 +12,8 @@ export default function SignUpPage(){
         try{
             setLoading(true)
             const response = await axios.post('/api/users/login',user);
-            console.log("Log in status: "+response)
-            router.push('/')
+            console.log("Log in status: "+response.user)
+            router.push(`/profile`)
         } catch (error){
             console.log("login authentication error: "+error)
         } finally {
@@ -28,10 +28,10 @@ export default function SignUpPage(){
     return(
         <>
             <div 
-                className='flex flex-col items-center justify-center min-h-screen py-2'><h1>{loading?"Authenticating":"Login"}</h1><br/>
+                className='flex flex-col items-center justify-center min-h-screen py-2 bg-primary text-primary'><h1>{loading?"Authenticating":"Login"}</h1><br/>
                 <label htmlFor='username'>username</label>
                 <input
-                    className='p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
+                    className='p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-secondary'
                     id='username'
                     type='text'
                     value={user.username}
@@ -40,7 +40,7 @@ export default function SignUpPage(){
                 />
                 <label htmlFor='password'>password</label>
                 <input
-                    className='p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
+                    className='p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-secondary'
                     id='password'
                     type='password'
                     value={user.password}
@@ -49,7 +49,10 @@ export default function SignUpPage(){
                 />
                 <button 
                     className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
-                    onClick={onLogin}>Login</button>
+                    onClick={onLogin}>Login</button><br/>
+                <div>Don't have an Account</div>
+                <Link 
+                    href='/signup'>Register Here!</Link>
                 
             </div>
         </>
