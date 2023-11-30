@@ -6,7 +6,7 @@ export default function Profile(){
     const router = useRouter()
     const onLogout = async()=>{
         try {
-            await axios.get('/api/users/logout')
+            await axios.post('/api/users/logout')
             router.push('/login')
         } catch (error) {
             console.log(error.message)
