@@ -12,7 +12,7 @@ export default function ImageSlider(){
                 {images.map((item,index)=>{
                     <Item key={index} item={item} />
                 })}
-                
+                W
             </Carousel>
         </>
     );
