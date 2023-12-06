@@ -2,6 +2,7 @@
 import {useEffect,useState} from 'react'
 import Link from 'next/link';
 import React from 'react';
+import { NextRequest, NextResponse } from 'next/server';
 import {useRouter} from 'next/navigation';
 import axios from 'axios';
 export default function SignUpPage(){
@@ -11,7 +12,8 @@ export default function SignUpPage(){
             setLoading(true)
             const response = await axios.post('/api/users/signup',user);
             console.log("Signup success",response.data)
-            router.push('/login')
+            // router.push('/login')
+            NextResponse.redirect(new URL('https://creative-sorbet-96d1b6.netlify.app/'))
         }catch(error){
             console.log(error)
         } finally {
