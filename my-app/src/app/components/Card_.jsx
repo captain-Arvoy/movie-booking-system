@@ -12,7 +12,6 @@ export default function Card_() {
                 <figure><img src="/annaporani.jpg" alt="ranveer" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Animal</h2>
-                    
                 </div>
             </div>
             <div className='p-32'>

@@ -12,36 +12,7 @@ export default function SignUpPage() {
     const [loading, setLoading] = useState(false)
     const router = useRouter()
     const onLogin = async () => {
-        try {
-            setLoading(true)
-            toast.info('Authenticating...',{
-                position: "top-center",
-                autoClose: 500,
-                pauseOnFocusLoss: false,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                progress: undefined,
-            })
-            const response = await axios.post('/api/users/login', user);
-            toast.success(`Welcome back ${user.username}!`,{
-                position: "top-center",
-                autoClose: 1000,
-                hideProgressBar: true,
-                pauseOnFocusLoss: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                progress: undefined,
-            })
-            // router.push(`/profile`)
-            // NextResponse.redirect(new URL('https://creative-sorbet-96d1b6.netlify.app/'))
-        } catch (error) {
-            console.log("login authentication error: " + error)
-        } finally {
-            setLoading(false)
-        }
+        
     }
     const [user, setUser] = useState({
         username: '',
